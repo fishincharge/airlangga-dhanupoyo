@@ -1,0 +1,103 @@
+.search-result-frame{
+    display: none;
+    position: absolute;
+    width: 450px;
+    max-height: 500px;
+    right: 0;
+    top: 90px;
+    z-index: 2;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    /* margin-right: 1rem; */
+}
+
+.search-active{
+    display: flex !important;
+}
+
+.search-box-inner{
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    /* scrollbar-width: thin; */
+    -webkit-overflow-scrolling: touch;
+}
+
+.search-box-inner::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-box-inner::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.search-box-inner::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    /* border: 2px solid #f1f1f1; */
+}
+
+.search-box-inner::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.search-box-card{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    background-color: #E4E7EB;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-box-card:hover{
+    background-color: #587585;
+}
+
+.search-box-card:hover .search-book-title,
+.search-box-card:hover .search-book-author{
+    color: white;
+
+}
+
+
+.search-box-image{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.search-box-info{
+    margin: 10px 0 0 10px;
+}
+
+.search-book-title{
+    font-family: 'Product Sans', sans-serif;
+    font-size: 14pt;
+    font-weight: 400;
+    margin: 0 0 3px 0;
+    padding: 0;
+    color: #3185FF;
+    cursor: default;
+}
+
+.search-book-author{
+    font-family: 'Product Sans', sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: #0B1D57;
+    cursor: default;
+}

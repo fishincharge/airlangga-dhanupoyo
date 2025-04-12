@@ -1,0 +1,161 @@
+.banner{
+    height: 720px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    padding: 40px 30px 0px 30px;
+    
+}
+
+
+
+.banner,
+.banner-details{
+    border-top-left-radius: 37px;
+    border-bottom-left-radius: 37px;
+
+}
+
+.banner,
+.banner-image{
+    border-top-right-radius: 37px;
+    border-bottom-right-radius: 37px;
+}
+
+
+
+.circle{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid;
+    border-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.banner-numbering .circle:hover{
+    background-color: #587585;
+    border: none;
+    border-color: white;
+}
+
+.banner-numbering .circle:hover p{
+    color: white;
+}
+
+.line{
+    width: 4px;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.circle p{
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 42pt;
+
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top:-10px;
+}
+
+.title-banner{
+    font-size: 45pt;
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-title{
+    font-size: 20pt;
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+
+    margin: 0;
+    padding: 0;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.banner-details-container{
+    margin-left: 150px;
+}
+
+.banner-details{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    background: linear-gradient(48deg, #A8C6E5, #5988B2);
+}
+
+.banner-image{
+    width: 900px;
+    height: 100%;
+
+}
+
+.services-list li{
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18pt;
+    color: white;
+}
+
+.banner-carousel-items.carousel-item.active{
+    margin-right: 0;
+}
+
+.carousel-promotion-frame.carousel.slide.carousel-fade{
+    width: 100%;
+}
+
+.carousel-promotion-inner.carousel-inner{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.banner-numbering{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 75px;
+    z-index: 2;
+}
+
+.banner-numbering button{
+    background-color: transparent;
+    border: none;
+}
+
+.active-circle{
+    background-color: #3185FF !important;
+    border: none !important;
+}
+
+.active-numbering{
+    color: white !important;
+    -webkit-text-stroke: 0 !important;
+}

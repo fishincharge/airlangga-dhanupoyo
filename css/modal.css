@@ -1,0 +1,36 @@
+.modal {
+    display: flex !important;
+    align-items: center;
+}
+.modal-dialog {
+    width: 100%;
+    max-width: 800px;
+}
+.modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.book-cover {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-modal{
+    z-index: -1;
+}
+
+.modal-backdrop{
+    display: none;
+    z-index: -2;
+}
+
+.book-modal-active{
+    z-index: 99;
+}
+
+.modal-backdrop-active{
+    display: block;
+    z-index: 98;
+}

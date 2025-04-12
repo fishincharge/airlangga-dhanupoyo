@@ -1,0 +1,120 @@
+.cta-title-top,
+.cta-title-middle,
+.cta-title-bottom{
+    font-family: 'Product Sans', sans-serif;
+    font-size: 28pt;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #0B1D57;
+    text-align: center;
+    z-index: 5;
+}
+
+.cta-ornament-top{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    z-index: 1;
+    /* background-color: lightslategray; */
+}
+
+.cta-ornament-bottom img,
+.cta-ornament-top img{
+    /* background-color: lightcoral; */
+    height: 500px;
+}
+
+.cta-ornament-bottom{
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    z-index: 1;
+}
+
+.cta-title-frame{
+    /* background-color: lightseagreen; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    min-height: 775px;
+    /* max-height: 1000px; */
+}
+
+.cta-title-container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightpink; */
+    width: 500px;
+    align-items: center;
+    margin: 0;
+    margin-top: 120px;
+}
+
+.cta-description{
+    font-family: 'Product Sans', sans-serif;
+    font-weight: 400;
+    /* background-color: lightblue; */
+    color: #0B1D57;
+    width: 600px;
+    line-height: 30px;
+    text-align: justify;
+    font-size: 16pt;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+    z-index: 5;
+}
+
+.cta-button-container{
+    display: flex;
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0px 120px 0px;
+}
+
+.cta-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E4E7EB;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    border-radius: 35px;
+    
+    z-index: 5;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover{
+    background-color: #3185FF;    
+    padding: 20px 40px 20px 40px;
+    border-radius: 45px;
+}
+
+.cta-button:active{
+    padding: 10px 30px 10px 30px;
+    border-radius: 35px;
+    transition: all 0.05s ease-in-out;
+}
+
+.cta-button:hover p{
+    color: white;    
+}
+
+.cta-button img{
+    height: 46px;
+}
+
+.cta-button p{
+    font-family: 'Product Sans', sans-serif;
+    font-size: 18pt;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 20px;
+    color: #0B1D57;
+}

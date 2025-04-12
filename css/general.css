@@ -1,0 +1,12 @@
+body{
+    width: 100%;
+
+    margin: 0px;
+    padding: 130px 0px 130px 0px;
+    background-color: #F1F8FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+

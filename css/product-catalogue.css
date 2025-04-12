@@ -1,0 +1,124 @@
+.book-display{
+    margin: 0;
+    padding: 0 130px 0 130px;
+    margin-top: 100px;
+    /* background-color: white; */
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+
+.book-frame{
+    display: flex;
+    flex: 0 0 auto;
+    width: max-content;
+    height: 500px;
+    flex-direction: column;
+    background-color: #E4E7EB;
+    border: none;
+    border-radius: 30px;
+    scroll-snap-align: start;
+    transition: all 0.1s ease-in-out;
+}
+
+.product-card-container{
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 340px;
+    min-height: 530px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.book-frame:hover{
+    /* width: 320px; */
+    height: 510px;
+}
+
+.book-frame:hover img{
+    /* width: 320px; */
+    height: 360px;
+}
+
+.book-frame img{
+    height: 350px;
+    width: 320px;
+    object-fit: cover;    
+    border-radius: 30px;
+}
+
+.book-title,
+.book-author{
+    font-family: 'Product Sans', sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.book-title{
+    margin-top: 20px;
+    color: #3185FF;
+}
+
+.book-author{
+    margin-top: 10px;
+    color: #0B1D57;
+}
+
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    padding-bottom: 3rem; /* Space for scrollbar */
+}
+
+.product-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.product-carousel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.product-carousel::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.scroll-arrow.left {
+    left: 10px;
+}
+
+.scroll-arrow.right {
+    right: 10px;
+}

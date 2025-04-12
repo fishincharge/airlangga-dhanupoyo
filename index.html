@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Airlangga Dhanupoyo</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+        
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/catalogue.css">
+        <link rel="stylesheet" href="css/cta.css">
+        <link rel="stylesheet" href="css/banner.css">
+        <link rel="stylesheet" href="css/product-catalogue.css">
+        <link rel="stylesheet" href="css/search-box.css">
+        <link rel="stylesheet" href="css/modal.css">
+
+    </head>
+    <body>
+        <div class="modal-backdrop fade show" id="id-modal-backdrop"></div>
+        <div class="book-modal modal fade" id="bookModal" data-bs-backdrop = "false" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookModalLabel">Detil Buku</h5>
+                        <button type="button" id="modal-icon-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="assets/banner-image.png" alt="Book Cover" class="book-cover img-fluid rounded" id="modal-book-image">
+                            </div>
+                            <div class="col-md-8">
+                                <h1 class="mb-2" id="modal-book-title">The Midnight Library</h1>
+                                <h2 class="h4 text-muted mb-3" id="modal-book-author">Between life and death there is a library</h2>
+                                <div class="synopsis">
+                                    <p class="lead">Sipnosis:</p>
+                                    <p class="text-justify" id="modal-book-synopsis">
+                                        Somewhere out beyond the edge of the universe there is a library that contains an infinite number of books, each one the story of another reality. One tells the story of your life as it is, along with another book for the other life you could have lived if you had made a different choice at any point in your life. While we all wonder how our lives might have been, what if you had the chance to go to the library and see for yourself? Would any of these other lives truly be better?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="modal-button-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Header-->
+        <div class="header shadow">
+            <div class="header-left">
+                <div class="logo-frame">
+                    <img class="logo-image" src="assets/logo.png" alt="Airlangga Dhanupoyo">
+                </div>
+
+                <h1 class="company-title">Airlangga Dhanupoyo</h1>
+            </div>
+            <div class="header-center">
+                <div class="navigation-section">
+                    <a href="#" class="nav-link active" id="id-navigation-home">Halaman Utama</a>
+                    <a href="#" class="nav-link" id="id-navigation-catalogue">Katalog</a>
+                    <a href="#" class="nav-link" id="id-navigation-about">Tentang Kami</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <form class="form-search">
+                        <div class="search-field">
+                            <input class="search-input" type="search" placeholder="cari buku publikasi kami.." id="id-input-search">
+                            <span class="search-icon material-symbols-outlined">search</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="search-result-frame shadow" id="id-search-result-frame">
+                <div class="search-box-inner" id="id-search-box-inner"></div>
+            </div>
+        </div>
+
+        <div id="carousel-promotion" class="carousel-promotion-frame carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-touch="true" data-bs-pause="false">
+            <div class="carousel-promotion-inner carousel-inner">
+                <div class="banner-numbering">
+                    <button type="button" data-bs-target="#carousel-promotion" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        <div class="circle">
+                            <p>1</p>
+                        </div>
+                    </button>
+                    <div class="line"></div>
+                    <button type="button" data-bs-target="#carousel-promotion" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2">
+                        <div class="circle">
+                            <p>2</p>
+                        </div>
+                    </button>
+                    <div class="line"></div>
+                    <button type="button" data-bs-target="#carousel-promotion" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3">
+                        <div class="circle">
+                            <p>3</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="banner-carousel-items carousel-item active">
+                    <div class="banner">
+                        <div class="banner-details">                        
+                            <div class="banner-details-container">
+                                <h1 class="title-banner">Terbitkan Karya</h1>
+                                <h1 class="title-banner">Anda!</h1>
+                                <h2 class="sub-title">Fasilitas</h2>
+                                <ul class="services-list">
+                                    <li>1</li>
+                                    <li>Layout Berstandar Tinggi</li>
+                                    <li>Desain Kover</li>
+                                    <li>Sertifikat Penulis</li>
+                                    <li>Buku Cetak Sesuai Paket yang Dipilih</li>
+                                    <li>Softfile & Pendaftaran link e-book</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img class="banner-image" src="assets/banner-image.png" alt="Books Preview">
+                        
+                    </div>
+                </div>
+                <div class="banner-carousel-items carousel-item">
+                    <div class="banner">
+                        <div class="banner-details">
+                            <div class="banner-details-container">
+                                <h1 class="title-banner">Terbitkan Karya</h1>
+                                <h1 class="title-banner">Anda!</h1>
+                                <h2 class="sub-title">Fasilitas</h2>
+                                <ul class="services-list">
+                                    <li>2</li>
+                                    <li>Layout Berstandar Tinggi</li>
+                                    <li>Desain Kover</li>
+                                    <li>Sertifikat Penulis</li>
+                                    <li>Buku Cetak Sesuai Paket yang Dipilih</li>
+                                    <li>Softfile & Pendaftaran link e-book</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img class="banner-image" src="assets/banner-image.png" alt="Books Preview">
+                        
+                    </div>
+                </div>
+                <div class="banner-carousel-items carousel-item">
+                    <div class="banner">
+                        <div class="banner-details">
+                            <div class="banner-details-container">
+                                <h1 class="title-banner">Terbitkan Karya</h1>
+                                <h1 class="title-banner">Anda!</h1>
+                                <h2 class="sub-title">Fasilitas</h2>
+                                <ul class="services-list">
+                                    <li>3</li>
+                                    <li>Layout Berstandar Tinggi</li>
+                                    <li>Desain Kover</li>
+                                    <li>Sertifikat Penulis</li>
+                                    <li>Buku Cetak Sesuai Paket yang Dipilih</li>
+                                    <li>Softfile & Pendaftaran link e-book</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img class="banner-image" src="assets/banner-image.png" alt="Books Preview">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="id-catalogue-scroll"></div>
+        <div class="book-catalogue-frame">
+            <div class="book-category-frame">
+                <div class="book-category-header">
+                    <h1>Katalog</h1>
+                    <h2>Buku - Buku yang</h2>
+                    <h2>diterbitkan oleh kami!</h2>
+                </div>
+                <div class="book-category-selection carousel slide carousel-fade" id="carousel-category-book">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-category-book" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon scroll-arrow" aria-hidden="true">❮</span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-category-book" data-bs-slide="next">
+                        <span class="carousel-control-next-icon scroll-arrow" aria-hidden="true">❯</span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="book-display">
+                <div class="product-carousel" id="productCarousel"></div>
+
+                <button class="scroll-arrow left" onclick="scrollCarousel(-1)">❮</button>
+                <button class="scroll-arrow right" onclick="scrollCarousel(1)">❯</button>
+            </div>
+        </div>
+
+        <div id="id-about-scroll"></div>
+        <div class="cta-title-frame">
+            <div class="cta-ornament-top">
+                <img src="assets/ornament-top.png" alt="background-ornament">
+            </div>
+            <div class="cta-ornament-bottom">
+                <img src="assets/ornament-bottom.png" alt="background-ornament">
+            </div>
+            <div class="cta-title-container">
+                <h1 class="cta-title-top">Kirim Naskah Anda sekarang dan dapatkan konsultasi</h1>
+                <h1 class="cta-title-middle">GRATIS</h1>
+                <h1 class="cta-title-bottom">dari editor kami</h1>
+            </div>
+            <p class="cta-description">Sudah saatnya karya Anda dibaca ribuan pembaca. Airlangga Dhanupoyo hadir sebagai mitra terpercaya dalam mewujudkan buku impian Anda. Dengan pengalaman lebih dari 10 tahun dan telah menerbitkan ratusan judul, kami siap menghadirkan karya berkualitas yang membanggakan.</p>
+            <div class="cta-button-container">
+                <button type="button" class="cta-button">
+                    <img src="assets/whatsapp-logo.png" alt="whatsapp logo">
+                    <p>Hubungi Kami</p>
+                </button>
+            </div>
+        </div>        
+    </body>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="javascript/carousel-script.js"></script>
+
+    <script src="javascript/catalogue-fetch.js"></script>
+
+    <script src="javascript/carousel-product.js"></script>
+
+    <script src="javascript/product-fetch.js"></script>
+
+    <script src="javascript/search.js"></script>
+
+    <script src="javascript/modal.js"></script>
+
+    <script src="javascript/header.js"></script>
+
+</html>
