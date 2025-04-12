@@ -25,8 +25,6 @@
     margin-top: 40px;
 }
 
-
-
 .header-left{
     display: flex;
     align-items: center;
@@ -168,22 +166,26 @@
   'opsz' 20 
 }
 
-@media (width < 768px){
+@media (max-width: 768px){
     .header{
         position: fixed;
         top: 0px;
+        left: 0px;
+        right: 0px;
         z-index: 90;
-    
+        
         display: flex;
+        flex: 0 0 auto;
+
         align-items: center;
         flex-direction: row;
-        background-color: blue;
+        background-color: #E4E7EB;
     
         width: calc(100% - 60px);
     
         box-sizing: border-box;
     
-        height: 80px;
+        height: max-content;
         border-radius: 50px;
     
         margin: 0px;
@@ -194,5 +196,45 @@
     
         margin-top: 40px;
     }
+
+    .header-left{
+        display: flex;
+    }
+
+    
+    .header-center{
+        display: none;
+    }
+    
+    .header-right{
+        display: none;
+    }
+
+    .logo-frame{
+        background-color: #FFFFFF;
+        display: flex;
+        height: max-content;
+        justify-content: center;
+        width: 130px;
+        min-width: 110px;
+        border-radius: 75px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .logo-image{
+        height: 80px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .company-title{
+        font-family: 'Product Sans', sans-serif;
+        font-weight: 100;
+        font-size: 18pt;
+        padding-left: 20px;
+        color: #587585;
+    }
+
     
 }

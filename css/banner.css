@@ -10,8 +10,6 @@
     
 }
 
-
-
 .banner,
 .banner-details{
     border-top-left-radius: 37px;
@@ -158,4 +156,9 @@
 .active-numbering{
     color: white !important;
     -webkit-text-stroke: 0 !important;
+}
+
+@media (max-width: 768px){
+    
+
 }

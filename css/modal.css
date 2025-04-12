@@ -1,5 +1,5 @@
 .modal {
-    display: flex !important;
+    display: none;
     align-items: center;
 }
 .modal-dialog {
@@ -33,4 +33,10 @@
 .modal-backdrop-active{
     display: block;
     z-index: 98;
+}
+
+@media (max-width: 768px) {
+    .book-modal{
+        
+    }
 }
