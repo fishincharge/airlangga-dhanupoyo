@@ -36,7 +36,16 @@
 }
 
 @media (max-width: 768px) {
-    .book-modal{
-        
+
+    .modal-dialog {
+        display: flex;
+        width: 100%;
+        max-width: initial;
+
+        padding: 0 10px;
+        margin: 0;
+
+        box-sizing: border-box;
     }
+
 }

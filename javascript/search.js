@@ -4,6 +4,8 @@ SHEET_TITLE = 'Buku';
 FULL_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${SHEET_TITLE}`;
 
 let inputSearch = document.getElementById('id-input-search');
+let inputSearchMobile = document.getElementById('id-input-search-mobile');
+
 let searchBoxInner = document.getElementById('id-search-box-inner');
 let searchResultFrame = document.getElementById('id-search-result-frame');
 
@@ -28,6 +30,19 @@ fetch(FULL_URL).then(res => res.text()).then(rep => {
         searchData(searchValue);    
     });
 
+    inputSearchMobile.addEventListener('input', function(event){
+        searchBoxInner.innerHTML = '';
+        const searchValue = event.target.value;
+        const isEmpty = searchValue.trim() === '';
+
+        if(!isEmpty){
+            searchResultFrame.classList.add('search-active');
+        }else{
+            searchResultFrame.classList.remove('search-active');
+        }
+
+        searchData(searchValue);    
+    });
 });
 
 let filteredRowSearch;

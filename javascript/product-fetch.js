@@ -59,7 +59,7 @@ function initProductCard(){
         productCardAuthor.innerHTML = data.table.rows[i].c[2].v;
 
         let productCardCategory = document.createElement('p');
-        productCardCategory.setAttribute('class', 'book-author card-text');
+        productCardCategory.setAttribute('class', 'book-genre card-text');
         productCardCategory.innerHTML = data.table.rows[i].c[3].v;
 
         let productCardContainer = document.createElement('div');

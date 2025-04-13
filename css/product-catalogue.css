@@ -35,14 +35,12 @@
 }
 
 .book-frame:hover{
-    /* width: 320px; */
-    height: 510px;
+    background-color: white;
 }
 
-.book-frame:hover img{
-    /* width: 320px; */
-    height: 360px;
-}
+/* .book-frame:hover img{
+    transform: scale(1.02);
+} */
 
 .book-frame img{
     height: 350px;
@@ -78,6 +76,8 @@
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
     padding-bottom: 3rem; /* Space for scrollbar */
+
+    background-color: transparent;
 }
 
 .product-carousel::-webkit-scrollbar {
@@ -124,5 +124,122 @@
 }
 
 @media (max-width: 768px){
+    .product-carousel {
+        
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 1rem;
+        padding-bottom: 3rem; /* Space for scrollbar */
+
+        display: grid;
+        grid-auto-flow: column; /* Horizontal scrolling */
+        grid-template-rows: auto auto; /* Two rows */
+        gap: 20px 10px; /* Row and column gaps */
+        overflow-x: auto;
+    }
+
+    .book-display{
+        margin: 0;
+        padding: 0;
+        margin-top: 80px;
+        /* background-color: white; */
+        display: flex;
+
+        width: 100%;
+        box-sizing: border-box;
+
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        
+    }
+
+    .scroll-arrow.right,
+    .scroll-arrow.left {
+        display: none;
+    }
+
+    .product-card-container{
+        display: flex;
+        flex: 0 0 auto;
+        min-width: max-content;
+        min-height: max-content;
+        justify-content: center;
+        align-items: center;
+
+        margin-right: 0px;
+    }
+
+    .book-frame{
+        display: flex;
+        flex: 0 0 auto;
+        width: max-content;
+        height: 300px;
+
+        margin: 0;
+        padding: 0;
+
+        flex-direction: column;
+        background-color: #E4E7EB;
+        border: none;
+        border-radius: 10px;
+        scroll-snap-align: start;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .book-frame img{
+        width: 150px;
+        height: 150px;
+        object-fit: cover;    
+        border-radius: 10px;
+    }
+    
+    .book-title,
+    .book-author,
+    .book-genre{
+        font-family: 'Product Sans', sans-serif;
+        font-size: 12pt;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+
+        /* Your existing styles */
+        white-space: normal; /* Allow wrapping */
+        word-break: break-word; /* Break long words */
+        max-width: 150px; /* Adjust based on your font size */
+    }
+    
+    .book-title{
+        margin-top: 10px;
+        color: #3185FF;
+    }
+    
+    .book-author{
+        margin-top: 5px;
+        color: #0B1D57;
+    }
+
+    .book-genre{
+        margin-top: 0px;
+        margin-bottom: 20px !important;
+        color: #587585;
+    }
+    
+    .card-body{
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+
+        margin: 0;
+        
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+
+        height: max-content;
+
+    }
     
 }

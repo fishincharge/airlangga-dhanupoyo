@@ -1,4 +1,6 @@
 body{
+    position: relative;
+
     width: 100%;
 
     margin: 0px;
@@ -15,7 +17,7 @@ body{
         width: 100%;
     
         margin: 0px;
-        padding: 140px 0px 0px 0px;
+        padding: 90px 0px 0px 0px;
         background-color: #F1F8FF;
         display: flex;
         flex-direction: column;

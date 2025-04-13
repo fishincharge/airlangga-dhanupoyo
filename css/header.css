@@ -166,6 +166,10 @@
   'opsz' 20 
 }
 
+.search-bar-mobile-frame{
+    display: none;
+}
+
 @media (max-width: 768px){
     .header{
         position: fixed;
@@ -200,7 +204,6 @@
     .header-left{
         display: flex;
     }
-
     
     .header-center{
         display: none;
@@ -232,11 +235,68 @@
     .company-title{
         font-family: 'Product Sans', sans-serif;
         font-weight: 100;
-        font-size: 12pt;
+        font-size: 14pt;
         margin: 0;
         padding-left: 10px;
         color: #587585;
     }
+
+    .search-bar-mobile-frame{
+        display: flex;
+        width: 100%;
+        display: flex;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        height: max-content;
+        margin-bottom: 30px;
+    }
+
+    .search-bar{
+        width: 100%;
+    }
+
+    .form-search{
+        display: flex;
+        flex: 0 0 auto;
+        width: 100%;
+        height: max-content;
+        box-sizing: border-box;
+    }
+
+    .search-icon{
+        margin-right: 10px;
+    }
+
+    .search-field{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        border-radius: 28px;
+        background: #E4E7EB;
+        transition: all 0.2s ease-in-out;
+        height: 35px;
+        border: 0px solid #3185FF;
+    
+        margin: 0;
+    }
+
+    .search-input{
+        font-size: 14px;
+        font-family: 'Product Sans', sans-serif;
+        font-weight: 400;
+        color: #333333;
+        margin-left: 14px;
+        padding: var(--padding);
+        outline: none;
+        border: none;
+        background: transparent;
+        width: 250px;
+    }
+
+    
 
     
 }

@@ -103,6 +103,7 @@
     height: 100%;
     align-items: center;
     background: linear-gradient(48deg, #A8C6E5, #5988B2);
+    padding-right: 50px;
 }
 
 .banner-image{
@@ -163,12 +164,18 @@
 }
 
 @media (max-width: 768px){
+    .carousel-inner {
+        width: 100%;
+        padding: 0 10px; /* 10px left/right */
+        box-sizing: border-box; /* Ensures padding is included in width */
+      }
+
     .banner{
         height: max-content;
         width: 100%;
     
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: flex-end;
     
         padding: 0px 0px 0px 0px;
@@ -177,37 +184,144 @@
     
     .banner,
     .banner-details{
-        border-radius: 37px;
+        border-radius: 0px 0px 17px 17px;
     
     }
     
     .banner,
     .banner-image{
-        border-radius: 37px;
+        border-radius: 17px 17px 0px 0px;
     }
 
     
     .banner-image{
-        width: 100%;
-        height: 670px;
+        --width: 100%;
+        width: var(--width);
+        max-height: var(--width);
+        aspect-ratio: 1 / 1;
         object-fit: cover;
     }
 
     .banner-carousel-items{
+        
         margin-right: 0 !important;
+        
     }
-
     
     .banner-details-container{
+        width: 100%;
+        padding: 0 10px; /* 10px left/right */
         margin-left: 0;
+        box-sizing: border-box; /* Ensures padding is included in width */
     }
 
     .banner-details{
         display: flex;
+        height: max-content;
         flex: 1;
         height: 100%;
         align-items: center;
         background: linear-gradient(48deg, #A8C6E5, #5988B2);
+        padding-top: 30px;
+        padding-bottom: 80px;
     }
 
+    .title-banner{
+        font-size: 24pt;
+        font-family: 'Product Sans', sans-serif;
+        font-weight: 900;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sub-title{
+        font-size: 16pt;
+        font-family: 'Product Sans', sans-serif;
+        font-weight: 700;
+        color: white;
+    
+        margin: 0;
+        padding: 0;
+    
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .services-list li{
+        font-family: 'Product Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14pt;
+        color: white;
+    }
+
+    .banner-numbering{
+        --width: calc(100% - 60px);
+
+        display: flex;
+        flex-direction: row;
+        height: max-content;
+        width: var(--width);
+        justify-content: space-between;
+        align-items: center;
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        bottom: 20px;
+        z-index: 2;
+    }
+
+    .banner-numbering button{
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .line{
+        width: 0px;
+        height: 2px;
+        background-color: white;
+        flex-grow: 1;
+    }
+    
+    .circle p{
+        align-items: center;
+        justify-content: center;
+    
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 24pt;
+    
+        -webkit-text-stroke: 1px white;
+        color: transparent;
+    
+        margin: 0;
+        padding: 0;
+    
+        position: relative;
+        top:-5px;
+    }
+
+    .circle{
+
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: solid;
+        border-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+@media(min-width: 1800px){
+    .carousel-promotion-frame{
+        width: 100%;
+    }
 }

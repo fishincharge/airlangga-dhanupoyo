@@ -153,9 +153,24 @@
 
 @media (max-width: 768px){
 
+    .book-catalogue-frame{
+        display: flex;
+
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+
+        flex-direction: column;
+        /* background-color: lightcoral; */
+        margin: 0px;
+        margin-top: 80px;
+        
+        align-items: center;
+    }
+
     .book-category-header h1{
         font-family: 'Product Sans';
-        font-size: 48pt;
+        font-size: 38pt;
         font-weight: 900;
         color: #0B1D57;
         /* background-color: lightpink; */
@@ -165,11 +180,19 @@
     
     .book-category-header h2{
         font-family: 'Product Sans', sans-serif;
-        font-size: 29pt;
+        font-size: 19pt;
         color: #3185FF;
         font-weight: 400;
         padding: 0;
         margin: 0;
+    }
+
+    .catalogue-inner.carousel-inner{
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin: 0;
+        padding: 0;
     }
     
     .book-category-frame{
@@ -180,16 +203,55 @@
     }
 
     .book-category-selection{
-        display: flex;
+        position: relative;
+
+        display: initial;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-end;
+        justify-content: flex-end;
         /* background-color: lightblue; */
-        flex: 0;
+        flex: none;
         width: 100%;
-        padding-right: 0px;
         max-width: 500px;
+        padding-right: 0px;
         gap: 10px;
+
+        height: max-content;
+        padding-bottom: 80px;
+        overflow: hidden;
+    }
+
+    .carousel-control-next{
+        position: absolute;
+        display: initial;
+        height: 40px;
+        width: 40px;
+
+        top: initial;
+        right: 20px !important;
+        bottom: 0 !important;
+
+        /* background-color: lightcoral; */
+    }
+
+    .carousel-control-prev{
+        position: absolute;
+        display: initial;
+        height: 40px;
+        width: 40px;
+
+        top: initial;
+        left: 20px !important;
+        bottom: 0 !important;
+
+        /* background-color: lightcoral; */
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon{
+        margin: 0;
+        padding: 0;
+        
     }
     
     .book-category-header{
@@ -197,17 +259,59 @@
         /* background-color: lightgoldenrodyellow; */
         flex: 1;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding-left: 0px;
+        margin-bottom: 30px;
     }
 
-    .carousel-control-next{
-        display: none;
-        right: 0 !important;
+    
+
+    .catalogue-item.carousel-item.active{
+        display: flex !important; 
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    .carousel-control-prev{
-        display: none;
-        right: 0 !important;
+    .book-category-top{
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+        gap: 10px;
+    }
+    
+    .book-category-middle{
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+        gap: 10px;
+    }
+    
+    .book-category-bottom{
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+        gap: 10px;
+    }
+
+    .filter-button{
+        border: none;
+        display: flex;
+        font-family: 'Product Sans', sans-serif;
+        font-size: 12pt;
+        color: #3185FF;
+        background-color: #E4E7EB;
+        justify-content: center;
+        /* white-space: nowrap; */
+        padding: 5px 20px 5px 20px;
+        border-radius: 20px;
+        transition: all 0.1s ease-in-out;
+        align-items: center;
+
+        /* Your existing styles */
+        white-space: normal; /* Allow wrapping */
+        word-break: break-word; /* Break long words */
+        max-width: 160px; /* Adjust based on your font size */
     }
 }
