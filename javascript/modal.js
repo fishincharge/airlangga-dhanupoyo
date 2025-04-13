@@ -66,3 +66,12 @@ function showModal(bookId){
 
     
 };
+
+// let searchInputMobile = document.getElementById('id-input-search-mobile');
+// searchInputMobile.addEventListener('click', () => {
+//     let modalBackdrop = document.getElementById('id-modal-backdrop');
+//     modalBackdrop.classList.add('modal-backdrop-active');
+
+//     let searchBarMobileFrame = document.getElementById('id-search-bar-mobile-frame');
+//     searchBarMobileFrame.classList.add('search-bar-mobile-frame-active')
+// });

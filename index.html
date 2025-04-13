@@ -82,10 +82,29 @@
             <div class="search-result-frame shadow" id="id-search-result-frame">
                 <div class="search-box-inner" id="id-search-box-inner"></div>
             </div>
+
+            <button class="navbar-toggler" id="id-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+             <!-- Collapsible menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" id="id-navigation-home-mobile">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="id-navigation-catalogue-mobile">Katalog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="id-navigation-about-mobile">Tentang Kami</a>
+                </li>
+                </ul>
+            </div>
             
         </div>
 
-        <div class="search-bar-mobile-frame">
+        <div class="search-bar-mobile-frame" id="id-search-bar-mobile-frame">
             <div class="search-bar">
                 <form class="form-search">
                     <div class="search-field">
@@ -193,11 +212,12 @@
                     <h2>Buku - Buku yang</h2>
                     <h2>diterbitkan oleh kami!</h2>
                 </div>
-                <div class="book-category-selection carousel slide carousel-fade" id="carousel-category-book">
+                <div class="book-category-selection carousel carousel-fade" id="carousel-category-book">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel-category-book" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon scroll-arrow" aria-hidden="true">❮</span>
                         <span class="visually-hidden">Previous</span>
                     </button>
+                    <div class="pilihan-kategori">Pilihan Kategori</div>
                     <button class="carousel-control-next" type="button" data-bs-target="#carousel-category-book" data-bs-slide="next">
                         <span class="carousel-control-next-icon scroll-arrow" aria-hidden="true">❯</span>
                         <span class="visually-hidden">Next</span>

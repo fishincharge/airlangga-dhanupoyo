@@ -32,7 +32,7 @@
 
 .modal-backdrop-active{
     display: block;
-    z-index: 98;
+    z-index: 95;
 }
 
 @media (max-width: 768px) {

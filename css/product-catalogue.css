@@ -208,7 +208,7 @@
         /* Your existing styles */
         white-space: normal; /* Allow wrapping */
         word-break: break-word; /* Break long words */
-        max-width: 150px; /* Adjust based on your font size */
+        max-width: 140px; /* Adjust based on your font size */
     }
     
     .book-title{

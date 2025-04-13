@@ -9,6 +9,10 @@ const homeSection = document.getElementById('id-top'); // Assuming you have this
 const catalogueSection = document.getElementById('id-catalogue-scroll');
 const aboutSection = document.getElementById('id-about-scroll');
 
+const navigationHomeMobile = document.getElementById('id-navigation-home-mobile');
+const navigationCatalogueMobile = document.getElementById('id-navigation-catalogue-mobile');
+const navigationAboutMobile = document.getElementById('id-navigation-about-mobile');
+
 // Click handlers
 navigationHome.addEventListener('click', function(e) {
     e.preventDefault();
@@ -29,6 +33,35 @@ navigationCatalogue.addEventListener('click', function(e) {
 });
 
 navigationAbout.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetPosition = aboutSection.getBoundingClientRect().top + window.scrollY - 150;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+    setActiveLink(navigationAbout);
+});
+
+// Click handlers
+navigationHomeMobile.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    setActiveLink(navigationHome);
+});
+
+navigationCatalogueMobile.addEventListener('click', function(e) {
+    e.preventDefault();
+    catalogueSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+    setActiveLink(navigationCatalogue);
+});
+
+navigationAboutMobile.addEventListener('click', function(e) {
     e.preventDefault();
     const targetPosition = aboutSection.getBoundingClientRect().top + window.scrollY - 150;
     window.scrollTo({
@@ -81,3 +114,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Add 'navbar' class under 768px
+function updateHeaderClass() {
+    const header = document.querySelector('.header');
+    if (window.innerWidth <= 768) {
+      header.classList.add('navbar');
+    } else {
+      header.classList.remove('navbar');
+    }
+  }
+  
+// Run on load and resize
+window.addEventListener('load', updateHeaderClass);
+window.addEventListener('resize', updateHeaderClass);
+
+let navbarToggle = document.getElementById('id-navbar-toggler');
+navbarToggle.addEventListener('click', () => {
+    let header = document.querySelector('.header');
+    header.classList.toggle('header-active');
+}); 
