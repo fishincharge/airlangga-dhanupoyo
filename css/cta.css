@@ -75,7 +75,7 @@
 .cta-button-container{
     display: flex;
     height: 100px;
-    width: 300px;
+    width: max-content;
     justify-content: center;
     align-items: center;
     margin: 60px 0px 120px 0px;
@@ -89,6 +89,7 @@
     border: none;
     padding: 10px 30px 10px 30px;
     border-radius: 35px;
+    width: max-content;
     
     z-index: 5;
     transition: all 0.2s ease-in-out;
@@ -96,7 +97,7 @@
 
 .cta-button:hover{
     background-color: #3185FF;    
-    padding: 20px 40px 20px 40px;
+    padding: 10px 30px 10px 30px;
     border-radius: 45px;
 }
 
