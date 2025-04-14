@@ -14,7 +14,6 @@ fetch(FULL_URL).then(res => res.text()).then(rep => {
     let data = JSON.parse(rep.substr(47).slice(0, -2));
     // data.table.rows.splice(0,1);
     globalDataSearch = data;
-    console.log(globalDataSearch);
 
     inputSearch.addEventListener('input', function(event){
         searchBoxInner.innerHTML = '';
@@ -82,7 +81,6 @@ function displaySearch(filteredRowSearch){
 
     let searchLength = filteredRowSearch.length;
 
-    console.log(filteredRowSearch);
     for(i=0; i<searchLength; i++){
         let sheet_image_link = filteredRowSearch[i].c[5].v;
 

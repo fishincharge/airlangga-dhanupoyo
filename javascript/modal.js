@@ -8,7 +8,6 @@ let modalData;
 fetch(FULL_URL).then(res => res.text()).then(rep => {
     let data = JSON.parse(rep.substr(47).slice(0, -2));
     modalData = data;
-    console.log(modalData);
 })
 
 let filteredModalData;

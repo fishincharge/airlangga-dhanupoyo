@@ -216,7 +216,7 @@
         /* background-color: lightblue; */
         flex: none;
         width: 100%;
-        max-width: 500px;
+        max-width: initial;
         padding-right: 0px;
         gap: 10px;
 

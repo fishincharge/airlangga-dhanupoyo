@@ -81,7 +81,6 @@ function initListener(){
     let productCard = document.querySelectorAll('.book-frame');
     productCard.forEach(card => {
         card.addEventListener('click', () => {
-            console.log('checkBookId: ', card.dataset.bookId);
             showModal(card.dataset.bookId);
         });
     });
