@@ -10,8 +10,11 @@ fetch(FULL_URL).then(res => res.text()).then(rep => {
     modalData = data;
 })
 
+
+
 let filteredModalData;
-function showModal(bookId){
+function showModal(bookId, isMobile){
+
     filteredModalData = modalData.table.rows.filter(row => {
         const filteredBookId = row.c[0]?.f;
         return filteredBookId === bookId;
@@ -41,36 +44,68 @@ function showModal(bookId){
 
         let modalBookSynopsis = document.getElementById('modal-book-synopsis');
         modalBookSynopsis.innerHTML = filteredModalData[i].c[4].v;
+        
+    }
 
-        let bookModal = document.getElementById('bookModal');
-        bookModal.classList.add('book-modal-active');
+    let bookModal = document.getElementById('bookModal');
+    bookModal.classList.add('book-modal-active');
 
-        let modalBackdrop = document.getElementById('id-modal-backdrop');
-        modalBackdrop.classList.add('modal-backdrop-active');
-
+    let modalBackdrop = document.getElementById('id-modal-backdrop');
+    modalBackdrop.classList.add('modal-backdrop-active');
+   
+    if(!isMobile){
         let modalIconClose = document.getElementById('modal-icon-close');
         modalIconClose.addEventListener('click', () => {
             bookModal.classList.remove('book-modal-active');
             modalBackdrop.classList.remove('modal-backdrop-active');
-        })
+            console.log("icon computer");
+        });
 
-        let modalButtonClose = document.getElementById('modal-button-close');
+        let modalButtonClose = document.getElementById('modal-button-close');        
         modalButtonClose.addEventListener('click', () => {
             bookModal.classList.remove('book-modal-active');
             modalBackdrop.classList.remove('modal-backdrop-active');
-        })
+        });
 
+    }else{
         
+        let modalIconCloseMobile = document.getElementById('modal-icon-close');
+        modalIconCloseMobile.addEventListener('click', () => {
+            bookModal.classList.remove('book-modal-active');
+            console.log("icon mobile");
+        });
+
+        modalBackdrop.addEventListener('click', () => {
+            modalBackdrop.classList.remove('modal-backdrop-active');
+            
+            closeSearchResult();
+        });
+
+        let modalButtonClose = document.getElementById('modal-button-close');   
+        modalButtonClose.addEventListener('click', () => {
+            bookModal.classList.remove('book-modal-active');
+            
+        });
     }
 
     
 };
 
-// let searchInputMobile = document.getElementById('id-input-search-mobile');
-// searchInputMobile.addEventListener('click', () => {
-//     let modalBackdrop = document.getElementById('id-modal-backdrop');
-//     modalBackdrop.classList.add('modal-backdrop-active');
+let searchInputMobile = document.getElementById('id-input-search-mobile');
+searchInputMobile.addEventListener('click', () => {
+    let modalBackdrop = document.getElementById('id-modal-backdrop');
+    modalBackdrop.classList.add('modal-backdrop-active');
 
-//     let searchBarMobileFrame = document.getElementById('id-search-bar-mobile-frame');
-//     searchBarMobileFrame.classList.add('search-bar-mobile-frame-active')
-// });
+    let searchBarMobileFrame = document.getElementById('id-search-bar-mobile-frame');
+    searchBarMobileFrame.classList.add('search-bar-mobile-frame-active')
+
+    modalBackdrop.addEventListener('click', () => {
+        modalBackdrop.classList.remove('modal-backdrop-active');
+        
+        closeSearchResult();
+    });
+
+    let header = document.getElementById('id-header');
+    header.classList.add('header-ontop-modal');
+    document.body.classList.add('body-no-scroll');
+});

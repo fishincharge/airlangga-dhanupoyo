@@ -155,9 +155,6 @@ function bannerDetails(dataBanner, bannerLength){
         });
         subTitle.innerHTML = `${dataBanner.table.rows[i].c[1].v}`;
 
-        console.log(dataBanner.table.rows[i].c[2].v);
-        console.log(dataBanner);
-
         bannerDetailsContainer.append(titleBanner);
         bannerDetailsContainer.append(subTitle);
 
@@ -169,7 +166,7 @@ function bannerDetails(dataBanner, bannerLength){
             // Create the JSON object
             descriptionListObject = { rows };
 
-            console.log(descriptionListObject);
+            
 
             let descriptionList = document.createElement('ul');
             setAttributes(descriptionList, {
@@ -195,7 +192,7 @@ function bannerDetails(dataBanner, bannerLength){
 
             bannerDetailsContainer.append(bannerDescription);
         }
-        console.log('sampe kok');
+        
 
         bannerDetails.append(bannerDetailsContainer);
         banner.append(bannerDetails);

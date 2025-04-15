@@ -25,6 +25,10 @@
     margin-top: 40px;
 }
 
+.header-ontop-modal{
+    z-index: 96 !important;
+}
+
 .header-left{
     display: flex;
     align-items: center;

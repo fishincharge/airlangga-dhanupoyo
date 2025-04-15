@@ -12,11 +12,11 @@ let carouselProductFetch = document.getElementById('productCarousel');
 fetch(FULL_URL).then(res => res.text()).then(rep => {
     data = JSON.parse(rep.substr(47).slice(0, -2));
     globalData = data;
-    // console.log(globalData);
+    
     
     initProductCard();
 
-    initListener();
+    initListener(false);
 });
 
 function initProductCard(){
@@ -77,18 +77,18 @@ function initProductCard(){
     }
 }
 
-function initListener(){
+function initListener(isMobile){
     let productCard = document.querySelectorAll('.book-frame');
     productCard.forEach(card => {
         card.addEventListener('click', () => {
-            showModal(card.dataset.bookId);
+            showModal(card.dataset.bookId, isMobile);
         });
     });
 
     let searchBoxCard = document.querySelectorAll('.search-box-card');
     searchBoxCard.forEach(card => {
         card.addEventListener('click', () => {
-            showModal(card.dataset.bookId);
+            showModal(card.dataset.bookId, isMobile);
         });
     });
 };
@@ -175,6 +175,6 @@ function displayResults(filteredRow, isSelected) {
 
     }
 
-    initListener();
+    initListener(false);
 }
 

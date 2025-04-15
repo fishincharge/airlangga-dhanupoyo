@@ -10,42 +10,84 @@ let searchBoxInner = document.getElementById('id-search-box-inner');
 let searchResultFrame = document.getElementById('id-search-result-frame');
 
 let globalDataSearch;
+
+let isMobile;
 fetch(FULL_URL).then(res => res.text()).then(rep => {
     let data = JSON.parse(rep.substr(47).slice(0, -2));
     // data.table.rows.splice(0,1);
     globalDataSearch = data;
 
-    inputSearch.addEventListener('input', function(event){
-        searchBoxInner.innerHTML = '';
-        const searchValue = event.target.value;
-        const isEmpty = searchValue.trim() === '';
-
-        if(!isEmpty){
-            searchResultFrame.classList.add('search-active');
-        }else{
-            searchResultFrame.classList.remove('search-active');
-        }
-
-        searchData(searchValue);    
-    });
-
-    inputSearchMobile.addEventListener('input', function(event){
-        searchBoxInner.innerHTML = '';
-        const searchValue = event.target.value;
-        const isEmpty = searchValue.trim() === '';
-
-        if(!isEmpty){
-            searchResultFrame.classList.add('search-active');
-        }else{
-            searchResultFrame.classList.remove('search-active');
-        }
-
-        searchData(searchValue);    
-    });
+    
 });
 
+inputSearch.addEventListener('input', function(event){
+    searchBoxInner.innerHTML = '';
+    const searchValue = event.target.value;
+    const isEmpty = searchValue.trim() === '';
+    isMobile = false;
+
+    
+    if(!isEmpty){
+        searchResultFrame.classList.add('search-active');
+    }else{
+        searchResultFrame.classList.remove('search-active');
+    }
+
+    searchData(searchValue,isMobile);    
+});
+
+inputSearchMobile.addEventListener('input', function(event){
+    searchBoxInner.innerHTML = '';
+    const searchValue = event.target.value;
+    const isEmpty = searchValue.trim() === '';
+    isMobile = true;
+
+    
+    
+    
+
+    if(!isEmpty){
+        openSearchResult();
+    }else{
+        closeSearchResult();
+    }
+
+    searchData(searchValue, isMobile);    
+});
+
+function openSearchResult() {
+    
+    searchResultFrame.classList.add('search-active');
+
+    let modalBackdrop = document.getElementById('id-modal-backdrop');
+    modalBackdrop.classList.add('modal-backdrop-active');
+
+    let searchBarMobileFrame = document.getElementById('id-search-bar-mobile-frame');
+    searchBarMobileFrame.classList.add('search-bar-mobile-frame-active')
+
+    let header = document.getElementById('id-header');
+    header.classList.add('header-ontop-modal');
+
+    document.body.classList.add('body-no-scroll');
+}
+
+function closeSearchResult() {
+    searchResultFrame.classList.remove('search-active');
+
+    let header = document.getElementById('id-header');
+    header.classList.remove('header-ontop-modal');
+
+    let searchBarMobileFrame = document.getElementById('id-search-bar-mobile-frame');
+    searchBarMobileFrame.classList.remove('search-bar-mobile-frame-active')
+
+    let modalBackdrop = document.getElementById('id-modal-backdrop');
+    modalBackdrop.classList.remove('modal-backdrop-active');
+
+    document.body.classList.remove('body-no-scroll');
+}
+
 let filteredRowSearch;
-function searchData(searchInput){
+function searchData(searchInput, isMobile){
     if(!globalDataSearch) return;
 
     filteredRowSearch = globalDataSearch.table.rows.filter(row => {
@@ -74,10 +116,10 @@ function searchData(searchInput){
         return titleA?.localeCompare(titleB) ?? 0;
     });
     
-    displaySearch(filteredRowSearch);
+    displaySearch(filteredRowSearch, isMobile);
 };
 
-function displaySearch(filteredRowSearch){
+function displaySearch(filteredRowSearch, isMobile){
 
     let searchLength = filteredRowSearch.length;
 
@@ -124,5 +166,6 @@ function displaySearch(filteredRowSearch){
 
     }
 
-    initListener();
+    
+    initListener(isMobile);
 }
