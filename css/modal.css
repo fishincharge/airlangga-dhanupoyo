@@ -7,7 +7,7 @@
     max-width: 800px;
 }
 .modal-content {
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
 }
 .book-cover {
